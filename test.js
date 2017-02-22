@@ -476,5 +476,11 @@ describe('tech', () => {
                 { block : 'button2', elem : 'text', tech : 'css' }
             ]);
         });
+
+        it('should extract tech for mod in ctx', () => {
+            expect(p('t:css', { block : 'button2', mod : { name : 'type' } })).to.eql([
+                { block : 'button2', mod : { name : 'type' }, tech : 'css' }
+            ]);
+        });
     });
 });
